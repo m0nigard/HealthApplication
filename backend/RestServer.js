@@ -1,3 +1,9 @@
+// Import the better-sqlite3 module
+const betterSqlite3 = require('better-sqlite3');
+
+// Connect to the database
+const db = betterSqlite3('./database/database.sql');
+
 var express = require('express')
 var app = express()
 
