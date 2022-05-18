@@ -52,3 +52,9 @@ function getData(data){
   }
   return filteredData 
 }
+
+const login = require('../frontend/loginScript.js');
+login(app, db);
+
+const register = require('../frontend/registerScript.js');
+register(app, db);
