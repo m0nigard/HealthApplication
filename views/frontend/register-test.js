@@ -1,29 +1,6 @@
-
-module.exports = function(app, db){
-
-    app.post('/api/user', (req, res) => {
-
-        let result
-        try {
-            let stmt = db.prepare(`
-            INSERT INTO users
-            (${Object.keys(req.body)}) VALUES (${Object.keys(req.body).map(x => ':' + x)})
-        `);
-
-        result = stmt.run(req.body)
-            
-        } catch (error) {
-            result = {_error: error + '' }
-        }
-        
-
-        res.json(result)
-    });
-
-
-    
-}
-
+document.querySelector('#login').addEventListener('click', (event) =>{
+    location.href = "/"
+});
 
 document.querySelector('form[name="registration"]').addEventListener('submit', async (event) =>{
     event.preventDefault();
@@ -41,6 +18,7 @@ document.querySelector('form[name="registration"]').addEventListener('submit', a
         reqBody[element.name] = element.value;
     }
 
+
     console.log(reqBody);
 
     let res = {};
@@ -57,6 +35,7 @@ document.querySelector('form[name="registration"]').addEventListener('submit', a
 
 
     if(!res || res._error){
+        console.log(res)
         console.log("Registration faild!");
         return;
     }
