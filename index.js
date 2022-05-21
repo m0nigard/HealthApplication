@@ -22,10 +22,13 @@ login(app, db);
 const register = require('./views/frontend/registerScript.js');
 register(app, db);
 
+
+
 app.use(express.static(__dirname))
 
-
-
+app.get('/loggedIn', function(req, res){
+    res.sendFile(__dirname+ "/views/frontend/loggedIn.html")
+});
 
 app.get('/', function(req, res){
     res.sendFile(__dirname+ "/views/frontend/login.html")
