@@ -26,7 +26,7 @@ document.querySelector('#login').addEventListener('click', async (event) =>{
     
 
     try {
-       result = await fetch('http://localhost:3000/api/login', {
+       result = await fetch('/api/login', {
            method: 'POST',
            headers: { 'content-type': 'application/json'},
            body: JSON.stringify(requestBody)

@@ -41,6 +41,6 @@ document.querySelector('form[name="registration"]').addEventListener('submit', a
     }
 
 
-
+    console.log("Registration success!");
 
 });
